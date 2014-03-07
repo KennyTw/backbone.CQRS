@@ -4,7 +4,11 @@
   , "version": "0.5.5"
   , "private": false
   , "main": "backboneCQRS.js" 
-  , "dependencies": { }
+  , "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ] , "dependencies": { }
   , "devDependencies": {
       "smoosh": ">=0.2.x"
     , "jake": ">=0.0.1"
