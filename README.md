@@ -1,5 +1,5 @@
 # Modified By Kenny Lee
-for Bower compatible
+for bower/browserify compatible
 
 # Introduction
 
