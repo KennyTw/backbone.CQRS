@@ -1,3 +1,6 @@
+# Modified By Kenny Lee
+for Bower compatible
+
 # Introduction
 
 Project goal is to simplify the usage of the CQRS Pattern under backbone.js by 
