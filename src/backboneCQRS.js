@@ -8,7 +8,8 @@
     // -------------
 
     // Save a reference to the global object.
-    var root = this;
+    //var root = this;
+	var root = window;
 
     // Save the value of the `Backbone` variable. All extended modules will 
     // be appended to Backbone namespace

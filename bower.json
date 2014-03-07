@@ -7,7 +7,9 @@
   , "ignore": [
     "**/.*",
     "node_modules",
-    "components"
+    "test",
+    "sample",
+    "dep"
   ] , "dependencies": { }
   , "devDependencies": {
       "smoosh": ">=0.2.x"
