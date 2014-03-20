@@ -129,6 +129,7 @@
     Backbone.CQRS.EventDenormalizer = function(options) {
         options = options || {};
         if (options.forEvent) this.forEvent = options.forEvent;
+		if (options.forEventFunc) this.forEventFunc = options.forEventFunc;
         if (options.forModel) this.forModel = options.forModel;
         if (options.payloadValue) this.payloadValue = options.payloadValue;
         if (options.modelIdAttr) this.modelIdAttr = options.modelIdAttr;
@@ -236,8 +237,17 @@
         // get specific denormalizer for model or event type
         getDenormalizer: function(forEvent, forModel) {
             if (forEvent) {
-                return _(this.denormalizers).filter(function(r) {
+                /*return _(this.denormalizers).filter(function(r) {
                     return r.forEvent == forEvent;
+                });*/
+				return _(this.denormalizers).filter(function(r) {                   			 
+					if (r.forEvent == forEvent) { 
+					  if (r.forEventFunc) {    					
+						   if (r.forEventFunc(evt)) return r;
+					  } else {
+							return r;
+						}
+					}
                 });
             } else if (forModel) {
                 return _(this.denormalizers).filter(function(r) {
