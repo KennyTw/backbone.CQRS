@@ -235,7 +235,7 @@
         },
 
         // get specific denormalizer for model or event type
-        getDenormalizer: function(forEvent, forModel) {
+        getDenormalizer: function(forEvent, forModel , evt) {
             if (forEvent) {
                 /*return _(this.denormalizers).filter(function(r) {
                     return r.forEvent == forEvent;
@@ -261,7 +261,7 @@
         // handles incoming events from hub
         handle: function(evt) {
             // to denormalizers
-            var denorm = this.getDenormalizer(evt.name);
+            var denorm = this.getDenormalizer(evt.name,null,evt);
 
             _(denorm).each(function(d) {
                 d.handle(evt);
